@@ -4,7 +4,7 @@ from polls.models import Choice
 
 # Register your models here.
 
-class ChoiceInline(admin.StackedInline):
+class ChoiceInline(admin.TabularInline):  #admin.StackedInline takes up more space
 	model = Choice
 	extra = 3
 

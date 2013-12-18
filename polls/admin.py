@@ -15,5 +15,6 @@ class PollAdmin(admin.ModelAdmin):
 	]
 	inlines = [ChoiceInline]
 	list_display = ('question', 'pub_date', 'was_published_recently') # adds descriptions to poll change
+	list_filter = ['pub_date'] # adds filter side bar for pub date
 
 admin.site.register(Poll, PollAdmin)

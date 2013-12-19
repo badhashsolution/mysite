@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.http import Http404 # WGG added 12/18/2013 10:17PM
 from polls.models import Poll
@@ -11,10 +11,7 @@ def index(request):
 	return render(request, 'polls/index.html', context)
 	
 def detail(request, poll_id):
-	try:
-		poll = Poll.objects.get(pk=poll_id)
-	except Poll.DoesNotExist:
-		raise Http404
+	poll = get_object_or_404(Poll, pk=poll_id)
 	return render(request, 'polls/detail.html', {'poll': poll})
 	
 def results(request, poll_id):

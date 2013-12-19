@@ -84,6 +84,3 @@ STATIC_URL = '/static/'
 
 # Template Directories added by WGG
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
-
-
-# Hi Kyle!
